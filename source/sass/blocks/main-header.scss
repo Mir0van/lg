@@ -1,0 +1,25 @@
+.main-header {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: $color-background;
+}
+
+.main-header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.main-header__burger {
+  display: none;
+}
+
+.main-header__logo {
+  margin-left: 6px;
+  margin-right: 26px;
+}
+
+.main-header__auth {
+  flex-shrink: 0;
+}

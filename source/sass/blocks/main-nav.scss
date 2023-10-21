@@ -1,0 +1,41 @@
+.main-nav__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  column-gap: 34px;
+}
+
+.main-nav__link {
+  display: block;
+  padding: 5px;
+  color: $color-text-tertiary;
+  transition: color $trans-default;
+
+  &--active {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 2px;
+      width: 21px;
+      height: 1.5px;
+      transform: translateX(-50%);
+      background-color: $color-accent-secondary;
+      transition: width $trans-default;
+    }
+  }
+
+  @include hover-focus {
+    color: $color-accent-secondary;
+    outline: none;
+
+    &::after {
+      width: 90%;
+    }
+  }
+}
+
+

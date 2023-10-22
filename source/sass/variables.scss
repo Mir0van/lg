@@ -9,6 +9,7 @@ $color-text-quaternary:             #7c7c7c;
 $color-text-quinary:                #707070;
 $color-background:                  #ecf7f3;
 $color-background-secondary:        #838383;
+$color-background-tertiary:         #e8e8e8;
 
 // Default
 
@@ -38,6 +39,10 @@ $ff-poppins:                        "Poppins", "Arial", sans-serif;
 
 $tf-default:                        ease;
 $trans-default:                     0.3s $tf-default;
+$animation-duration:                60s;
+$animation-delay:                   6.5s;
+$animation-delay-secondary:         3s;
+$animation-delay-gap:               0.4s;
 
 // если требуется изинг отличный от $tf-default, то переменную называем не цифрой
 $trans-modal:                       0.6s cubic-bezier(0.55, 0, 0.1, 1);
@@ -62,6 +67,32 @@ $retina-dpi:                        144dpi;
 $retina-dppx:                       1.5dppx;
 
 // Keyframes
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes spin-reverse {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes move-to-orbite {
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
 
 @keyframes shake {
   0% {

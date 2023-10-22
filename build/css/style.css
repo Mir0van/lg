@@ -314,6 +314,59 @@ template {
   display: none;
 }
 
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+  }
+}
+@-webkit-keyframes spin-reverse {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes spin-reverse {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes move-to-orbite {
+  100% {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
+@keyframes move-to-orbite {
+  100% {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
 @-webkit-keyframes shake {
   0% {
     -webkit-transform: translateX(0);
@@ -360,7 +413,6 @@ template {
             transform: translateX(0);
   }
 }
-
 @keyframes shake {
   0% {
     -webkit-transform: translateX(0);
@@ -1397,6 +1449,11 @@ button,
 
 .main-index {
   background-color: #ecf7f3;
+  overflow-x: hidden;
+}
+
+.intro {
+  padding-top: 54px;
 }
 
 .intro__wrapper {
@@ -1405,6 +1462,13 @@ button,
   -ms-grid-columns: 1fr 0.87fr;
   grid-template-columns: 1fr 0.87fr;
   padding-left: 9px;
+  -webkit-column-gap: 15px;
+     -moz-column-gap: 15px;
+          column-gap: 15px;
+}
+
+.intro__content {
+  padding-top: 35px;
 }
 
 .intro__title {
@@ -1508,6 +1572,24 @@ button,
   color: #fd905a;
 }
 
+.intro__wheel-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+.intro__wheel {
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+  -webkit-transform: translateX(10px);
+      -ms-transform: translateX(10px);
+          transform: translateX(10px);
+}
+
 .search.is-fail {
   -webkit-animation: shake 0.3s ease-in-out;
           animation: shake 0.3s ease-in-out;
@@ -1532,8 +1614,8 @@ button,
 .searh__input {
   height: 62px;
   width: 100%;
-  -webkit-box-shadow: 0px 20px 30px 0px rgba(222, 222, 222, 0.25);
-          box-shadow: 0px 20px 30px 0px rgba(222, 222, 222, 0.25);
+  -webkit-box-shadow: 0 20px 30px 0 rgba(222, 222, 222, 0.25);
+          box-shadow: 0 20px 30px 0 rgba(222, 222, 222, 0.25);
   outline: none;
   border: none;
   border-radius: 50px;
@@ -1577,6 +1659,186 @@ button,
   background-image: url("../img/svg/search.svg");
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.wheel {
+  position: relative;
+}
+.wheel::after {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background-color: #48b774;
+  top: 117px;
+  left: 51%;
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
+.wheel__wrapper {
+  width: 450px;
+  height: 450px;
+  border: 2px solid #e8e8e8;
+  border-radius: 50%;
+  position: relative;
+  -webkit-animation-name: spin;
+          animation-name: spin;
+  -webkit-animation-duration: 60s;
+          animation-duration: 60s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-delay: 6.5s;
+          animation-delay: 6.5s;
+}
+
+.wheel__image-wrapper {
+  position: absolute;
+  z-index: 100;
+  top: 44px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  min-width: 300px;
+}
+
+.wheel__inner {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  width: 0;
+  -webkit-transform-origin: 0% 100%;
+      -ms-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+  padding-bottom: 225px;
+}
+.wheel__inner:nth-child(1) {
+  -webkit-transform: rotate(-103deg);
+      -ms-transform: rotate(-103deg);
+          transform: rotate(-103deg);
+}
+.wheel__inner:nth-child(1) .wheel__content {
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+.wheel__inner:nth-child(2) {
+  -webkit-transform: rotate(-61deg);
+      -ms-transform: rotate(-61deg);
+          transform: rotate(-61deg);
+}
+.wheel__inner:nth-child(2) .wheel__content {
+  -webkit-animation-delay: 3.4s;
+          animation-delay: 3.4s;
+}
+.wheel__inner:nth-child(3) {
+  -webkit-transform: rotate(5deg);
+      -ms-transform: rotate(5deg);
+          transform: rotate(5deg);
+}
+.wheel__inner:nth-child(3) .wheel__content {
+  -webkit-animation-delay: 3.8s;
+          animation-delay: 3.8s;
+}
+.wheel__inner:nth-child(4) {
+  -webkit-transform: rotate(62deg);
+      -ms-transform: rotate(62deg);
+          transform: rotate(62deg);
+}
+.wheel__inner:nth-child(4) .wheel__content {
+  -webkit-animation-delay: 4.2s;
+          animation-delay: 4.2s;
+}
+.wheel__inner:nth-child(5) {
+  -webkit-transform: rotate(102deg);
+      -ms-transform: rotate(102deg);
+          transform: rotate(102deg);
+}
+.wheel__inner:nth-child(5) .wheel__content {
+  -webkit-animation-delay: 4.6s;
+          animation-delay: 4.6s;
+}
+
+.wheel__content {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: translate(-50%, 185px);
+      -ms-transform: translate(-50%, 185px);
+          transform: translate(-50%, 185px);
+  -webkit-animation-name: move-to-orbite;
+          animation-name: move-to-orbite;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+.wheel__content:nth-child(2) {
+  width: 120px;
+}
+.wheel__content--small {
+  width: 50px;
+  height: 50px;
+}
+.wheel__content--big {
+  width: 70px;
+  height: 70px;
+}
+.wheel__content--large {
+  width: 80px;
+  height: 80px;
+}
+
+.wheel__img {
+  width: 100%;
+  height: 100%;
+}
+.wheel__img::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 10px solid #ffffff;
+  border-radius: 50%;
+  background-color: #ff8345;
+  background-image: url("../img/index/italy.png");
+  background-image: -webkit-image-set(url("../img/index/italy@2x.webp") 2x type("image/webp"), url("../img/index/italy.webp") 1x type("image/webp"), url("../img/index/italy@2x.png") 2x type("image/png"), url("../img/index/italy.png") 1x type("image/png"));
+  background-image: image-set(url("../img/index/italy@2x.webp") 2x type("image/webp"), url("../img/index/italy.webp") 1x type("image/webp"), url("../img/index/italy@2x.png") 2x type("image/png"), url("../img/index/italy.png") 1x type("image/png"));
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-animation-name: spin-reverse;
+          animation-name: spin-reverse;
+  -webkit-animation-duration: 60s;
+          animation-duration: 60s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-delay: 6.5s;
+          animation-delay: 6.5s;
+}
+.wheel__img--india::after {
+  background-image: url("../img/index/india.png");
+  background-image: -webkit-image-set(url("../img/index/india@2x.webp") 2x type("image/webp"), url("../img/index/india.webp") 1x type("image/webp"), url("../img/index/india@2x.png") 2x type("image/png"), url("../img/index/india.png") 1x type("image/png"));
+  background-image: image-set(url("../img/index/india@2x.webp") 2x type("image/webp"), url("../img/index/india.webp") 1x type("image/webp"), url("../img/index/india@2x.png") 2x type("image/png"), url("../img/index/india.png") 1x type("image/png"));
+}
+.wheel__img--uk::after {
+  background-image: url("../img/index/uk.png");
+  background-image: -webkit-image-set(url("../img/index/uk@2x.webp") 2x type("image/webp"), url("../img/index/uk.webp") 1x type("image/webp"), url("../img/index/uk@2x.png") 2x type("image/png"), url("../img/index/uk.png") 1x type("image/png"));
+  background-image: image-set(url("../img/index/uk@2x.webp") 2x type("image/webp"), url("../img/index/uk.webp") 1x type("image/webp"), url("../img/index/uk@2x.png") 2x type("image/png"), url("../img/index/uk.png") 1x type("image/png"));
 }
 
 /* @mixin hover-focus {

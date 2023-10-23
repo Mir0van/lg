@@ -39,7 +39,7 @@
                 </li>
               </ul>
             </nav>
-            <button class="main-header__auth btn" type="button" aria-label="Sign Up" data-close-menu>
+            <button class="main-header__auth btn" type="button" data-close-menu>
               <span>Sign Up</span>
             </button>
             <button class="main-header__burger btn" type="button" data-burger>
@@ -61,7 +61,9 @@
               <form class="intro__search search" action="https://echo.htmlacademy.ru/" method="get" data-form>
                 <div class="search__wrapper">
                   <input class="search__input" type="text" name="search" minlength="4" maxlength="12" placeholder="Where do you want to call?" autocomplete="off" required data-input>
-                  <button class="search__button btn" type="submit"></button>
+                  <button class="search__button btn" type="submit">
+                    <span class="visually-hidden">Search</span>
+                  </button>
                 </div>
               </form>
               <div class="intro__user-wrapper">

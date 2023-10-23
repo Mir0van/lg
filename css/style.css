@@ -835,6 +835,7 @@ button,
 
 .btn.focus-visible:focus {
   opacity: 0.8;
+  outline: 1px solid #ff8345;
 }
 
 .main-header {
@@ -1116,6 +1117,12 @@ button,
   color: #fd905a;
 }
 
+.intro__user-link.focus-visible:focus {
+  opacity: 0.8;
+  outline: 1px solid #48b774;
+  border-radius: 5px;
+}
+
 .intro__wheel-wrapper {
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
@@ -1384,6 +1391,7 @@ button,
   border: 10px solid #ffffff;
   border-radius: 50%;
   background-color: #ff8345;
+  background-image: url("../img/index/italy.png");
   background-image: -webkit-image-set(url("../img/index/italy@2x.webp") 2x type("image/webp"), url("../img/index/italy.webp") 1x type("image/webp"), url("../img/index/italy@2x.png") 2x type("image/png"), url("../img/index/italy.png") 1x type("image/png"));
   background-image: image-set(url("../img/index/italy@2x.webp") 2x type("image/webp"), url("../img/index/italy.webp") 1x type("image/webp"), url("../img/index/italy@2x.png") 2x type("image/png"), url("../img/index/italy.png") 1x type("image/png"));
   background-position: center;
@@ -1404,11 +1412,13 @@ button,
 }
 
 .wheel__img--india::after {
+  background-image: url("../img/index/india.png");
   background-image: -webkit-image-set(url("../img/index/india@2x.webp") 2x type("image/webp"), url("../img/index/india.webp") 1x type("image/webp"), url("../img/index/india@2x.png") 2x type("image/png"), url("../img/index/india.png") 1x type("image/png"));
   background-image: image-set(url("../img/index/india@2x.webp") 2x type("image/webp"), url("../img/index/india.webp") 1x type("image/webp"), url("../img/index/india@2x.png") 2x type("image/png"), url("../img/index/india.png") 1x type("image/png"));
 }
 
 .wheel__img--uk::after {
+  background-image: url("../img/index/uk.png");
   background-image: -webkit-image-set(url("../img/index/uk@2x.webp") 2x type("image/webp"), url("../img/index/uk.webp") 1x type("image/webp"), url("../img/index/uk@2x.png") 2x type("image/png"), url("../img/index/uk.png") 1x type("image/png"));
   background-image: image-set(url("../img/index/uk@2x.webp") 2x type("image/webp"), url("../img/index/uk.webp") 1x type("image/webp"), url("../img/index/uk@2x.png") 2x type("image/png"), url("../img/index/uk.png") 1x type("image/png"));
 }
@@ -1639,5 +1649,9 @@ button,
 
   .main-nav__link:hover:not(.focus-visible)::after {
     width: 90%;
+  }
+
+  .intro__user-link:hover:not(.focus-visible) {
+    opacity: 0.8;
   }
 }

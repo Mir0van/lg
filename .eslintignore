@@ -2,3 +2,4 @@ build/*.js
 source/js/vendor/*.js
 gulpfile.js
 webpack.config.cjs
+source/js/utils/scroll-lock.js

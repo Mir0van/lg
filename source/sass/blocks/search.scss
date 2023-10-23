@@ -4,7 +4,7 @@
   }
 }
 
-.searh__wrapper {
+.search__wrapper {
   position: relative;
 
   &::before {
@@ -16,10 +16,14 @@
     top: 50%;
     transform: translateY(-50%);
     left: 37px;
+
+    @include vp-767 {
+      left: 13px;
+    }
   }
 }
 
-.searh__input {
+.search__input {
   height: 62px;
   width: 100%;
   box-shadow: 0 20px 30px 0 rgba(222, 222, 222, 0.25);
@@ -39,9 +43,13 @@
   &.is-fail {
     animation: shake 0.3s ease-in-out;
   }
+
+  @include vp-767 {
+    padding: 0 15px;
+  }
 }
 
-.searh__button {
+.search__button {
   position: absolute;
   right: 4px;
   top: 50%;

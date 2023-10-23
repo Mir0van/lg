@@ -18,6 +18,7 @@ html {
   line-height: 24px;
   font-family: $ff-poppins;
   color: $color-text;
+  scroll-behavior: smooth;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -50,12 +51,6 @@ textarea {
   resize: none;
 }
 
-// chrome autofill background removal
-// если на проекте у инпутов используются разные цвета фонов\текста -
-// удалите это из глобала и используйте локально с нужными цветами
-// rgba не подойдет, сконвертируйте цвет в hex без прозрачности
-// если в стилях уже используется box-shadow есть другое решение -
-// задать к списку транзишенов `background-color 10000000s ease-out`
 input:-webkit-autofill {
   box-shadow: inset 0 0 0 1000px $color-default-white;
 
@@ -69,10 +64,6 @@ textarea {
 
   &::placeholder {
     opacity: 1;
-  }
-
-  &:invalid {
-    // box-shadow: none;
   }
 }
 

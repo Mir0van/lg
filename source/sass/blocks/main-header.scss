@@ -2,6 +2,7 @@
   padding-top: 30px;
   padding-bottom: 30px;
   background-color: $color-background;
+  position: relative;
 }
 
 .main-header__wrapper {
@@ -9,17 +10,90 @@
   justify-content: space-between;
   align-items: center;
   column-gap: 10px;
+
+  @include vp-767 {
+    justify-content: start;
+  }
 }
 
 .main-header__burger {
   display: none;
+
+  @include vp-767 {
+    display: block;
+    flex-shrink: 0;
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background-color: $color-accent-secondary;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    z-index: 100;
+  }
+}
+
+.main-header__toogle-icon {
+  background-color: $color-default-white;
+  border-radius: 6px;
+  height: 2px;
+  position: absolute;
+  left: calc(50% - 12px);
+  top: calc(50% - 1px);
+  transition: all $trans-default;
+  width: 24px;
+
+  &--top {
+    transform: translateY(-6px);
+  }
+
+  &--bottom {
+    transform: translateY(6px);
+  }
+}
+
+.is-open {
+  .main-header__toogle-icon {
+    &--top {
+      transform: rotate(45deg);
+    }
+
+    &--middle {
+      transform: translateX(-70%);
+      background-color: transparent;
+    }
+
+    &--bottom {
+      transform: rotate(-45deg);
+    }
+  }
 }
 
 .main-header__logo {
   margin-left: 6px;
   margin-right: 26px;
+  z-index: 200;
 }
 
 .main-header__auth {
   flex-shrink: 0;
+  z-index: 100;
+
+  @include vp-767 {
+    width: 45px;
+    height: 45px;
+    padding: 0;
+    margin-left: auto;
+    border-radius: 50%;
+    background-image: url("../img/svg/sign-up.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 65%;
+
+    & > span {
+      display: none;
+    }
+  }
 }

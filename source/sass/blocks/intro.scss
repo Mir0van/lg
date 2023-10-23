@@ -1,23 +1,29 @@
 .intro {
-  padding-top: 54px;
-  // overflow-x: hidden;
-  // overflow-y: auto;
+  overflow-x: clip;
 }
 
 .intro__wrapper {
   display: grid;
-  grid-template-columns: 1fr 0.87fr;
+  grid-template-columns: 1fr 0.84fr;
+  grid-template-rows: auto auto auto auto 1fr;
   padding-left: 9px;
   column-gap: 15px;
-}
 
-.intro__content {
-  padding-top: 35px;
+  @include vp-1023 {
+    padding-left: 0;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
 }
 
 .intro__title {
+  grid-column: 1 / 2;
+
   margin: 0;
   margin-bottom: 10px;
+  margin-top: 89px;
   font-size: 48px;
   line-height: 1.35;
   font-weight: 700;
@@ -27,9 +33,26 @@
   & > span {
     color: $color-accent-secondary;
   }
+
+  @include vp-1023 {
+    order: -2;
+    grid-area: auto;
+    text-align: center;
+    max-width: 900px;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  @include vp-767 {
+    font-size: 34px;
+    max-width: 640px;
+    margin: 0 auto;
+  }
 }
 
 .intro__description {
+  grid-column: 1 / 2;
+
   margin: 0;
   margin-bottom: 29px;
   font-size: 15px;
@@ -37,22 +60,43 @@
   font-weight: 500;
   color: $color-text-quaternary;
   max-width: 490px;
+
+  @include vp-1023 {
+    grid-area: auto;
+    max-width: initial;
+  }
 }
 
 .intro__button {
+  grid-column: 1 / 2;
+  justify-self: start;
+
   font-size: 15px;
   padding: 14.5px 22px;
   border-radius: 25px;
   margin-bottom: 50px;
+
+  @include vp-1023 {
+    margin-bottom: 40px;
+  }
 }
 
 .intro__search {
+  grid-column: 1 / 2;
   margin-bottom: 35px;
 }
 
 .intro__user-wrapper {
+  grid-column: 1 / 2;
+  align-self: start;
+
   display: flex;
   align-items: center;
+  padding-bottom: 30px;
+
+  @include vp-1023 {
+    padding-bottom: 0;
+  }
 }
 
 .intro__user-list {
@@ -72,6 +116,7 @@
   width: 38px;
   height: 38px;
   border: 3px solid $color-default-white;
+  background-color: $color-accent-secondary;
 
   &--plus {
     background-color: $color-accent-secondary;
@@ -106,14 +151,29 @@
 }
 
 .intro__wheel-wrapper {
+  grid-column: 2 / 3;
+  grid-row: 1 / 6;
+
   display: flex;
-  // justify-content: center;
   justify-content: end;
+
+  overflow-y: clip;
+  padding-top: 54px;
+  padding-bottom: 151px;
+
+  @include vp-1023 {
+    grid-area: auto;
+    order: -1;
+    justify-content: center;
+    padding-top: 50px;
+    margin-bottom: 30px;
+  }
 }
 
 .intro__wheel {
-  align-self: start;
-
   transform: translateX(10px);
-  // right: -43px;
+
+  @include vp-1023 {
+    transform: translateX(0);
+  }
 }

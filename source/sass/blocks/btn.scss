@@ -17,7 +17,12 @@
     pointer-events: none;
   }
 
-  @include hover-focus {
+  @include hover {
     opacity: 0.8;
+  }
+
+  @include focus {
+    opacity: 0.8;
+    outline: 1px solid $color-accent-secondary;
   }
 }

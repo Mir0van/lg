@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Simple, reliable, and cheap international calling based on your unique calling behavior.">
     <title>Global</title>
     <link rel="stylesheet" href="css/style.min.css">
@@ -44,9 +44,9 @@
             </button>
             <button class="main-header__burger btn" type="button" data-burger>
               <span class="visually-hidden">Открыть меню</span>
-              <div class="main-header__toogle-icon main-header__toogle-icon--top"></div>
-              <div class="main-header__toogle-icon main-header__toogle-icon--middle"></div>
-              <div class="main-header__toogle-icon main-header__toogle-icon--bottom"></div>
+              <span class="main-header__toogle-icon main-header__toogle-icon--top"></span>
+              <span class="main-header__toogle-icon main-header__toogle-icon--middle"></span>
+              <span class="main-header__toogle-icon main-header__toogle-icon--bottom"></span>
             </button>
           </div>
         </div>
@@ -59,9 +59,11 @@
               <p class="intro__description visually-hidden" data-api-description>We&nbsp;Make international calling simple, relible, and cheap basedon your unique calling behavior.</p>
               <button class="intro__button btn">Get Started</button>
               <form class="intro__search search" action="https://echo.htmlacademy.ru/" method="get" data-form>
-                <div class="searh__wrapper">
-                  <input class="searh__input" autofocus type="text" name="search" minlength="4" maxlength="12" placeholder="Where do you want to call?" autocomplete="off" required data-input>
-                  <button class="searh__button btn" type="submit"></button>
+                <div class="search__wrapper">
+                  <input class="search__input" type="text" name="search" minlength="4" maxlength="12" placeholder="Where do you want to call?" autocomplete="off" required data-input>
+                  <button class="search__button btn" type="submit">
+                    <span class="visually-hidden">Search</span>
+                  </button>
                 </div>
               </form>
               <div class="intro__user-wrapper">
@@ -96,7 +98,7 @@
                   <div class="wheel__image-wrapper">
                     <picture>
                       <source type="image/webp" srcset="./img/index/girl.webp 1x, ./img/index/girl@2x.webp 2x">
-                      <img class="wheel__image" src="./img/index/girl.png" srcset="./img/index/girl@2x.png 2x" loading="lazy" width="300" height="557" alt="Girl.">
+                      <img class="wheel__image" src="./img/index/girl.png" srcset="./img/index/girl@2x.png 2x" width="300" height="557" alt="Girl.">
                     </picture>
                   </div>
                   <div class="wheel__wrapper">

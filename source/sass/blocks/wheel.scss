@@ -175,6 +175,8 @@
     border: 10px solid $color-default-white;
     border-radius: 50%;
     background-color: $color-accent-secondary;
+    background-image: url("../img/index/italy.png");
+    // stylelint-disable-next-line
     background-image: image-set(
       url("../img/index/italy@2x.webp") 2x type("image/webp"),
       url("../img/index/italy.webp") 1x type("image/webp"),
@@ -199,6 +201,8 @@
 
   &--india {
     &::after {
+      background-image: url("../img/index/india.png");
+      // stylelint-disable-next-line
       background-image: image-set(
       url("../img/index/india@2x.webp") 2x type("image/webp"),
       url("../img/index/india.webp") 1x type("image/webp"),
@@ -210,6 +214,8 @@
 
   &--uk {
     &::after {
+      background-image: url("../img/index/uk.png");
+      // stylelint-disable-next-line
       background-image: image-set(
       url("../img/index/uk@2x.webp") 2x type("image/webp"),
       url("../img/index/uk.webp") 1x type("image/webp"),
